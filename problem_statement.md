@@ -11,9 +11,9 @@ Now given a pair of integers n and k, you have to print out the order in which t
 First line is _t_ which denotes the number of test cases.
 Each test case consists of a single line, integers _n_ and _k_
 
-**Constraints**
-_t_ <= 10
-_2<=n,k<=10^3_
+**Constraints** <br/>
+_t_ <= 10 <br/>
+_2<=n,k<=10^3_ <br/>
  
  **Output**
  The numbers of the players being removed one after the other in a new line
