@@ -19,11 +19,11 @@ _2<=n,k<=10^3_
  The numbers of the players being removed one after the other in a new line
 
 **Example**
-_Input_ 
+_Input_  <br/>
 1
 25 2
 
-_Output_
+_Output_ <br/>
 4
 6
 8
