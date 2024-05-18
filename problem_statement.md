@@ -13,7 +13,7 @@ Each test case consists of a single line, integers _n_ and _k_
 
 **Constraints**
 _t_ <= 10
-_2<=n,k<=10^3
+_2<=n,k<=10^3_
  
  **Output**
  The numbers of the players being removed one after the other in a new line
