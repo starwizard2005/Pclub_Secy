@@ -18,5 +18,5 @@ _Input_ <br/>
 _Output_ <br/>
 12
 
-**Explanation**
+**Explanation <br/>
 We first buy the first element 9. Now if we skip the next _9_ indexes, we would have traversed the full array, but since our index is now bigger than the size we add (current index = _9_ - size = _5_) _4_ giving us the total cost as _13_. <br/>Instead, if we now dont skip and buy the second index and then skip the next _3_ elements, we arrive at exactly the end of the array, giving us a total cost of _9+3 = 12_. This is the lowest possible cost to traverse the array(You can try other methods yourself to arrive at the conclusion)
