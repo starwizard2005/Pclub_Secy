@@ -16,10 +16,11 @@ and we are done with the problem
     using namespace std;
 
 
-
+    int mx = -1;
     int f(int i, vector <int> &a, vector <int> &dp){
 
-    if(i >= a.size()) return i - a.size();
+    if(i >= a.size()) return mx;
+    if ( i == a.size() - 1 ) return a[i];
     if(dp[i] != -1) return dp[i];
     int not_choose = a[i] + f(i+1, a, dp);
     int choose = a[i] + f(i+a[i]+1, a, dp);
@@ -35,6 +36,10 @@ and we are done with the problem
         vector <int>a(n);
         for (int i = 0;i<n;i++)
             cin>>a[i];
+        for (int i = 0;i<n;i++){
+            if (a[i] > max)
+                mx = a[i];
+        }
         vector<int> dp(n, -1);
         cout<<f(0, a, dp)<<'\n';
         return 0;
