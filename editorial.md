@@ -13,7 +13,8 @@ and we are done with the problem
 #include <iostream>
 #include <vector>
 using namespace std;
-
+```
+```
 int f(int i, vector <int> &a, vector <int> &dp){
 
     if(i >= a.size()) return i - a.size();
@@ -24,6 +25,8 @@ int f(int i, vector <int> &a, vector <int> &dp){
 
     return dp[i];
 }
+```
+```
 int main(){
     int n;
     cin>>n;
