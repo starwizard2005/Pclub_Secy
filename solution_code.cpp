@@ -1,58 +1,24 @@
 #include <iostream>
 #include <vector>
-
 using namespace std;
 
-void circle_winner(int n, int k) {
-    vector<int> people(n);
-    vector<int> extraLives(n, 0);
-    vector<int> prime(n+1,1);
+int f(int i, vector <int> &a, vector <int> &dp){
 
-    for (int i = 2;i<=n;i++){
-        if (prime[i] == 1){
-            for (int j = 2*i;j<=n;j+=i){
-                prime[j] = 0;
-            }
-        }
-    }
-    for (int i = 0; i < n; i++) {
-        people[i] = i + 1;
-        if (prime[i+1]) {
-            extraLives[i] = 1; // Prime-numbered positions get an extra life
-        }
-    }
+    if(i >= a.size()) return i - a.size();
+    if(dp[i] != -1) return dp[i];
+    int not_choose = a[i] + f(i+1, a, dp);
+    int choose = a[i] + f(i+a[i]+1, a, dp);
 
-    int index = 0;
-    while (people.size() > 0) {
-        index = (index + k - 1) % people.size();
-        int currentPerson = people[index];
-        int currentIndex = currentPerson - 1;
-        if (extraLives[currentIndex] > 0) {
-            extraLives[currentIndex] -= 1;
-            index = (index + 1) % people.size();
-        }
-        else {
-            cout << currentPerson << endl;
-            if (prime[currentPerson]) {
-                extraLives[people[(index - 1 + people.size()) % people.size()] - 1] += 1;//adding to previous index
-                extraLives[people[(index + 1) % people.size()] - 1] += 1;//adding to next index
-            }
-            people.erase(people.begin() + index);
-        }
-
-    }
-
-    return;
+    return dp[i] = min(choose, not_choose);
 }
 
-int main() {
-    int t;
-    cin >> t;
-    while(t--){
-        int n,k;
-        cin >> n >> k;
-        circle_winner(n,k);
-    }
+int main(){
+    int n;
+    cin>>n;
+    vector <int>a(n);
+    for (int i = 0;i<n;i++)
+        cin>>a[i];
+    vector<int> dp(n, -1);
+    cout<<f(0, a, dp)<<'\n';
     return 0;
 }
-
