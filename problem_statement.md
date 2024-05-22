@@ -15,7 +15,7 @@ _Input_ <br/>
 5 <br/>
 9 3 1 1 1
 
-_Output_
+_Output_ <br/>
 12
 
 **Explanation**
