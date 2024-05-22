@@ -9,15 +9,15 @@ and we are done with the problem
 **Solution Code** 
 
 <br/>
-```
-{
-#include <iostream>
-#include <vector>
-using namespace std;
+
+    
+    #include <iostream>
+    #include <vector>
+    using namespace std;
 
 
 
-int f(int i, vector <int> &a, vector <int> &dp){
+    int f(int i, vector <int> &a, vector <int> &dp){
 
     if(i >= a.size()) return i - a.size();
     if(dp[i] != -1) return dp[i];
@@ -26,17 +26,17 @@ int f(int i, vector <int> &a, vector <int> &dp){
     dp[i] = min(choose, not_choose);
 
     return dp[i];
-}
+    }
 
 
-int main(){
-    int n;
-    cin>>n;
-    vector <int>a(n);
-    for (int i = 0;i<n;i++)
-        cin>>a[i];
-    vector<int> dp(n, -1);
-    cout<<f(0, a, dp)<<'\n';
-    return 0;
-}
-}```
+    int main(){
+        int n;
+        cin>>n;
+        vector <int>a(n);
+        for (int i = 0;i<n;i++)
+            cin>>a[i];
+        vector<int> dp(n, -1);
+        cout<<f(0, a, dp)<<'\n';
+        return 0;
+    }
+
