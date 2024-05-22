@@ -1,18 +1,18 @@
-#include <iostream>
-#include <random>
-#include <stdio.h>
-#include <stdlib.h>
+#include "testlib.h"
 #include <time.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int t;
-    srand(time(0));
-    t = rand()%10000;
-    for (int i = 0;i < t;i++){
-        cout << rand()%10000 << " "
+int main(int argc, char* argv[]){
+	registerGen(argc, argv, 1);
+	int max_n = atoi(argv[1]);
+	int n = rnd.next(2, max_n);
+	cout<<n<<endl;
+	for (int i = 0;i<n-1;i++){
+        cout << rnd.next(0,10000) << " ";
     }
-    endl
+	cout<< rnd.next(0,10000) << endl;
+    return 0;
 }
 
 
