@@ -10,11 +10,13 @@ and we are done with the problem
 
 <br/>
 ```
+{
 #include <iostream>
 #include <vector>
 using namespace std;
-```
-```
+
+
+
 int f(int i, vector <int> &a, vector <int> &dp){
 
     if(i >= a.size()) return i - a.size();
@@ -25,8 +27,8 @@ int f(int i, vector <int> &a, vector <int> &dp){
 
     return dp[i];
 }
-```
-```
+
+
 int main(){
     int n;
     cin>>n;
@@ -36,4 +38,5 @@ int main(){
     vector<int> dp(n, -1);
     cout<<f(0, a, dp)<<'\n';
     return 0;
+}
 }```
